@@ -208,13 +208,14 @@ class WordleClone(toga.App):
         elif self.active_row == 6:
             message = f"The correct answer is {self.word}!"
 
+        self.guess.value = ""
+
         if not (message):
             return
 
         self.main_window.info_dialog("", message)
         self.gameover = 1
         self.resetbutton.enabled = True
-        self.guess.value = ""
 
     def validate(self, _):
         if self.gameover:
